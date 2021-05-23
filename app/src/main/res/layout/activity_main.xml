@@ -16,14 +16,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="5km\n━━━━━━━━━"
+        app:layout_constraintBottom_toTopOf="@+id/content"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:background="#ffffff"
-        android:padding="10dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/cafe_info_style"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,6 +41,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/ic_launcher_background"
             android:src="@drawable/ic_launcher_foreground"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,38 +50,55 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:paddingStart="5dp"
-            android:textSize="26sp"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:paddingEnd="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/snippet"
+            app:layout_constraintEnd_toStartOf="@+id/textView2"
             app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/info_layout_style_white"
+            android:text="커피"
+            app:layout_constraintBottom_toBottomOf="@+id/title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="@+id/title" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/info_layout_style_white"
+            android:text="밀크티"
+            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView2" />
 
         <TextView
             android:id="@+id/snippet"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
             android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toBottomOf="@+id/title" />
+            app:layout_constraintTop_toTopOf="@+id/imageView" />
 
         <TextView
             android:id="@+id/price"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:paddingStart="5dp"
-            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toBottomOf="@+id/snippet" />
-
-        <Button
-            android:id="@+id/ok_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="이동"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/price" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
